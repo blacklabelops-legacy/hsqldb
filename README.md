@@ -31,6 +31,19 @@ Inside the UI select "HSQL Database Engine Server" and enter the JDBC URL: jdbc:
 
 > Note: When you use boot2docker then enter the ip of your VM instead of 'localhost'!
 
+# Use the SQLTool Client
+
+SQLTool is a command line client for SQL, default is HSQL.
+
+Execute SQLTool on your host:
+
+~~~~
+$ docker cp hsqldb:/opt/sqltool/ .
+$ java -jar ./sqltool/sqltool.jar --inlineRc=url=jdbc:hsqldb:hsql://localhost/test,user=sa
+~~~~
+
+> Note: There seems to be a bug in sqltool, hope this will be fixed in later versions...
+
 # Set the Database alias
 
 You can adjust the Database Alias with the environment variable: HSQLDB_DATABASE_ALIAS
@@ -85,6 +98,7 @@ This container supports the following additional settings:
 * Disable HSQL Trace Modus (do not display JDBC trace messages): HSQLDB_TRACE="false"
 * Enable HSQL Silent Mode (true => do not display all queries): HSQLDB_SILENT="true"
 * Disable HSQL Remote Connections (can open databases remotely): HSQLDB_REMOTE="false"
+* Set HSQL Database Host (server inet address): HSQLDB_DATABASE_HOST="192.168.99.100"
 
 Example:
 
@@ -93,6 +107,7 @@ $ docker run -d --name hsqldb \
 	-e "HSQLDB_TRACE=false" \
   -e "HSQLDB_SILENT=true" \
   -e "HSQLDB_REMOTE=false" \
+  -e "HSQLDB_DATABASE_HOST=192.168.99.100" \
 	-p 9001:9001 \
 	blacklabelops/hsqldb
 ~~~~

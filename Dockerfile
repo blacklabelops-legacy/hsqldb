@@ -19,9 +19,10 @@ RUN yum install -y \
 ENV HSQLDB_VERSION=2.3.3
 RUN mkdir -p /opt/database && \
     mkdir -p /opt/hsqldb && \
+    mkdir -p /opt/sqltool && \
     wget -O /opt/hsqldb/hsqldb.jar http://central.maven.org/maven2/org/hsqldb/hsqldb/${HSQLDB_VERSION}/hsqldb-${HSQLDB_VERSION}.jar && \
-    mkdir -p /opt/database && \
-    chown -R $CONTAINER_UID:$CONTAINER_GID /opt/hsqldb /opt/database
+    wget -O /opt/sqltool/sqltool.jar http://central.maven.org/maven2/org/hsqldb/sqltool/${HSQLDB_VERSION}/sqltool-${HSQLDB_VERSION}.jar && \
+    chown -R $CONTAINER_UID:$CONTAINER_GID /opt/hsqldb /opt/database /opt/sqltool
 
 VOLUME ["/opt/database"]
 EXPOSE 9001
