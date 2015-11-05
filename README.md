@@ -44,6 +44,22 @@ $ java -jar ./sqltool/sqltool.jar --inlineRc=url=jdbc:hsqldb:hsql://localhost/te
 
 > Note: There seems to be a bug in sqltool, hope this will be fixed in later versions...
 
+# Set Username and Password
+
+You can specify the Username and Password with the environment variables HSQLDB_USER and HSQLDB_PASSWORD.
+
+Example:
+
+~~~~
+$ docker run -d --name hsqldb \
+	-e "HSQLDB_USER=sa" \
+  -e "HSQLDB_PASSWORD=password" \
+	-p 9001:9001 \
+	blacklabelops/hsqldb
+~~~~
+
+> Default container user is 'sa' and empty password!
+
 # Set the Database alias
 
 You can adjust the Database Alias with the environment variable: HSQLDB_DATABASE_ALIAS
