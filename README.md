@@ -20,12 +20,12 @@ Recommended: Docker-Compose! Just curl the files and modify the environment-vari
 the .env-file.
 
 ~~~~
-$ curl -O https://raw.githubusercontent.com/blacklabelops/jenkins/master/docker-compose.yml
-$ curl -O https://raw.githubusercontent.com/blacklabelops/jenkins/master/docker-compose.env
+$ curl -O https://raw.githubusercontent.com/blacklabelops/hsqldb/master/docker-compose.yml
+$ curl -O https://raw.githubusercontent.com/blacklabelops/hsqldb/master/docker-compose.env
 $ docker-compose up -d
 ~~~~
 
-> [docker-compose.env]() contains a full list of environment variables.
+> [docker-compose.env](https://github.com/blacklabelops/hsqldb/blob/master/docker-compose.env) contains a full list of environment variables.
 
 # Connect to HSQLDB
 
