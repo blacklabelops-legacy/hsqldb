@@ -1,0 +1,13 @@
+# Jenkins Master
+jenkins:
+  image: blacklabelops/hsqldb
+  container_name: hsqldb
+  ports:
+   - "9001:9001"
+  volumes:
+    - /opt/database
+  env_file:
+    - docker-compose.env
+  labels:
+    com.blacklabelops.description: "HSQL Development System"
+    com.blacklabelops.service: "hsqldb-server"

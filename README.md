@@ -16,6 +16,17 @@ $ docker run -d -p 9001:9001 --name hsqldb blacklabelops/hsqldb
 
 > Will run hsqldb which will be accessible through jdbc URL: jdbc:hsqldb:hsql://localhost/test, Username: sa, Password :
 
+Recommended: Docker-Compose! Just curl the files and modify the environment-variables inside
+the .env-file.
+
+~~~~
+$ curl -O https://raw.githubusercontent.com/blacklabelops/jenkins/master/docker-compose.yml
+$ curl -O https://raw.githubusercontent.com/blacklabelops/jenkins/master/docker-compose.env
+$ docker-compose up -d
+~~~~
+
+> [docker-compose.env]() contains a full list of environment variables.
+
 # Connect to HSQLDB
 
 The following commands copy the UI-Binaries out of the running container and starts the UI locally:
