@@ -1,5 +1,7 @@
 Docker container with HSQLDB for Software Development.
 
+Good news! This container has rooted out root! Safely running inside userspace!
+
 Installed Software:
 
   * Java 8
