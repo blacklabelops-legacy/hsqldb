@@ -54,18 +54,28 @@ hsqldb_inetadress=""
 
 if [ -n "${HSQLDB_DATABASE_HOST}" ]; then
   hsqldb_host=${HSQLDB_DATABASE_HOST}
-  hsqldb_inetadress="-address "${HSQLDB_DATABASE_HOST}
 fi
 
-  cat > /opt/sqltool/sqltool.rc <<_EOF_
+  cat > /opt/hsqldb/sqltool.rc <<_EOF_
 urlid ${hsqldb_database_alias}
 url jdbc:hsqldb:hsql://${hsqldb_host}/${hsqldb_database_alias}
 username SA
 password
 _EOF_
 
-if [ "$1" = 'hsqldb' ]; then
-  java ${java_vm_parameters} -cp /opt/hsqldb/hsqldb.jar org.hsqldb.Server -database.0 "file:/opt/database/${hsqldb_database_name};user=${hsqldb_user};password=${hsqldb_password}" -dbname.0 ${hsqldb_database_alias} ${hsqldb_trace} ${hsqldb_silent} ${hsqldb_remote} ${hsqldb_inetadress}
-fi
+cat > ~/sqltool.rc <<_EOF_
+urlid db
+url jdbc:hsqldb:hsql://hsqldb/${hsqldb_database_alias}
+username SA
+password
+_EOF_
 
-exec "$@"
+if [ "$1" = 'hsqldb' ]; then
+  java ${java_vm_parameters} -cp /opt/hsqldb/hsqldb.jar org.hsqldb.Server -database.0 "file:/opt/database/${hsqldb_database_name};user=${hsqldb_user};password=${hsqldb_password}" -dbname.0 ${hsqldb_database_alias} ${hsqldb_trace} ${hsqldb_silent} ${hsqldb_remote}
+else
+  if [ "$1" = 'sqltool' ]; then
+    java -jar /opt/hsqldb/sqltool.jar db
+  else
+    exec "$@"
+  fi
+fi

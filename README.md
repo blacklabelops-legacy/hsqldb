@@ -47,13 +47,49 @@ Inside the UI select "HSQL Database Engine Server" and enter the JDBC URL: jdbc:
 
 # Use the SQLTool Client
 
-SQLTool is a command line client for SQL, default is HSQL.
+SQLTool is a command line client for HSQL: [Documentation](http://hsqldb.org/doc/2.0/util-guide/sqltool-chapt.html)
+
+## Connect SQLTool from container
+
+Simply start a connected cli by typing:
+
+~~~~
+$ docker exec -it hsqldb bash -c "java -jar /opt/hsqldb/sqltool.jar db"
+~~~~
+
+If you want to mount your script directory, then start a new container:
+
+~~~~
+$ docker run -it --rm \
+  --link hsqldb:hsqldb \
+	-v $(pwd)/dbscripts:/scripts \
+	blacklabelops/hsqldb sqltool
+~~~~
+
+> The folder /scripts is a Volume with the appropriate user permissions.
+
+## Connect SQLTool from your Host
+
+Boot2Docker: First start the server with the host environment variable:
+
+~~~~
+$ docker run -d --name hsqldb \
+	-e "HSQLDB_DATABASE_HOST=192.168.99.100" \
+	-p 9001:9001 \
+	blacklabelops/hsqldb
+~~~~
+
+> The sqltool settings sqltool.rc will now include the correct host.
 
 Execute SQLTool on your host:
 
 ~~~~
-$ docker cp hsqldb:/opt/sqltool/ .
-$ java -jar ./sqltool/sqltool.jar --inlineRc=url=jdbc:hsqldb:hsql://localhost/test,user=sa
+# Copy the binaries to your host
+$ docker cp hsqldb:/opt/hsqldb .
+# Copy settings.rc to your home directory
+$ cp ./hsqldb/sqltool.rc ~
+# Start sql tool
+$ java -jar ./hsqldb/sqltool.jar test
 ~~~~
 
 > Note: There seems to be a bug in sqltool, hope this will be fixed in later versions...
@@ -128,7 +164,7 @@ This container supports the following additional settings:
 * Disable HSQL Trace Modus (do not display JDBC trace messages): HSQLDB_TRACE="false"
 * Enable HSQL Silent Mode (true => do not display all queries): HSQLDB_SILENT="true"
 * Disable HSQL Remote Connections (can open databases remotely): HSQLDB_REMOTE="false"
-* Set HSQL Database Host (server inet address): HSQLDB_DATABASE_HOST="192.168.99.100"
+* Set HSQL Database Host (for sqltool.rc): HSQLDB_DATABASE_HOST="192.168.99.100"
 
 Example:
 
