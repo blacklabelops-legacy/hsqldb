@@ -1,5 +1,7 @@
 Docker container with HSQLDB for Software Development.
 
+Leave a message and ask questions on Hipchat: [blacklabelops/hipchat](https://www.hipchat.com/geogBFvEM)
+
 Good news! This container has rooted out root! Safely running inside userspace!
 
 Installed Software:
