@@ -1,5 +1,7 @@
 Docker container with HSQLDB for Software Development.
 
+New Minimized Alpine Version: [![](https://badge.imagelayers.io/blacklabelops/hsqldb:latest.svg)](https://imagelayers.io/?images=blacklabelops/hsqldb:latest 'Get your own badge on imagelayers.io')
+
 Leave a message and ask questions on Hipchat: [blacklabelops/hipchat](https://www.hipchat.com/geogBFvEM)
 
 Installed Software:
