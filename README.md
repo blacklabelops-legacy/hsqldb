@@ -1,6 +1,9 @@
-Docker container with HSQLDB for Software Development.
+# Docker Image with HSQLDB for Software Development.
 
-New Minimized Alpine Version: [![](https://badge.imagelayers.io/blacklabelops/hsqldb:latest.svg)](https://imagelayers.io/?images=blacklabelops/hsqldb:latest 'Get your own badge on imagelayers.io')
+[![Circle CI](https://circleci.com/gh/blacklabelops/hsqldb/tree/master.svg?style=shield)](https://circleci.com/gh/blacklabelops/hsqldb/tree/master) [![Docker Stars](https://img.shields.io/docker/stars/blacklabelops/hsqldb.svg)](https://hub.docker.com/r/blacklabelops/hsqldb/) [![Docker Pulls](https://img.shields.io/docker/pulls/blacklabelops/hsqldb.svg)](https://hub.docker.com/r/blacklabelops/hsqldb/)
+[![](https://badge.imagelayers.io/blacklabelops/hsqldb:latest.svg)](https://imagelayers.io/?images=blacklabelops/hsqldb:latest 'Get your own badge on imagelayers.io')
+
+## Release: blacklabelops/hsqldb:latest
 
 Leave a message and ask questions on Hipchat: [blacklabelops/hipchat](https://www.hipchat.com/geogBFvEM)
 
@@ -12,7 +15,7 @@ Installed Software:
 
 # Make It Short
 
-In short, use this container for starting and stopping a simple HSQLDB on your develeopment
+In short, use this image for starting and stopping a simple HSQLDB on your develeopment
 environment.
 
 ~~~~
@@ -93,8 +96,6 @@ $ cp ./hsqldb/sqltool.rc ~
 # Start sql tool
 $ java -jar ./hsqldb/sqltool.jar test
 ~~~~
-
-> Note: There seems to be a bug in sqltool, hope this will be fixed in later versions...
 
 # Set Username and Password
 
