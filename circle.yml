@@ -1,0 +1,15 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker version
+    - docker info
+    - docker build -t blacklabelops/hsqldb .
+
+test:
+  override:
+    - docker run blacklabelops/hsqldb bash -c "echo Hello World"
+    - docker run -d -p 9001:9001 --name hsqldb blacklabelops/hsqldb
+    - docker cp hsqldb:/opt/hsqldb/hsqldb.jar .
