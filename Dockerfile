@@ -1,4 +1,4 @@
-FROM blacklabelops/java-jre-8:alpine
+FROM blacklabelops/java:openjre8
 MAINTAINER Steffen Bleul <sbl@blacklabelops.com>
 
 # Image Environment Variables
