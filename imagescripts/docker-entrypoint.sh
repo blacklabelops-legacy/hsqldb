@@ -16,7 +16,7 @@ fi
 hsqldb_password=""
 
 if [ -n "${HSQLDB_PASSWORD}" ]; then
-  hsqldb_user=${HSQLDB_PASSWORD}
+  hsqldb_password=${HSQLDB_PASSWORD}
 fi
 
 hsqldb_trace="-trace true"
