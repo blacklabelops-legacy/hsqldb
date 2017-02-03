@@ -5,8 +5,6 @@
 
 ## Release: blacklabelops/hsqldb:latest
 
-Leave a message and ask questions on Hipchat: [blacklabelops/hipchat](https://www.hipchat.com/geogBFvEM)
-
 Installed Software:
 
   * Java 8
@@ -194,7 +192,11 @@ $ docker run -d --name hsqldb \
 
 > You will have to use Java 8 parameters: [JRE 8 Linux](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html).
 
-## References
+# Support
+
+Leave a message and ask questions on Hipchat: [blacklabelops/hipchat](http://support.blacklabelops.com)
+
+# References
 
 * [HSQLDB](http://hsqldb.org/)
 * [Docker Homepage](https://www.docker.com/)
