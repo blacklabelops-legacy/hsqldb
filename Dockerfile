@@ -2,7 +2,7 @@ FROM blacklabelops/java:openjre8
 MAINTAINER Steffen Bleul <sbl@blacklabelops.com>
 
 # Image Environment Variables
-ENV HSQLDB_VERSION=2.3.3 \
+ENV HSQLDB_VERSION=2.4.0 \
     JAVA_VM_PARAMETERS= \
     HSQLDB_TRACE= \
     HSQLDB_SILENT= \
