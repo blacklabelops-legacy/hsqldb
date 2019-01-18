@@ -1,9 +1,5 @@
 # Docker Image with HSQLDB for Software Development.
 
-[![Circle CI](https://circleci.com/gh/blacklabelops/hsqldb/tree/master.svg?style=shield)](https://circleci.com/gh/blacklabelops/hsqldb/tree/master)
-[![Open Issues](https://img.shields.io/github/issues/blacklabelops/hsqldb.svg)](https://github.com/blacklabelops/hsqldb/issues) [![Stars on GitHub](https://img.shields.io/github/stars/blacklabelops/hsqldb.svg)](https://github.com/cblacklabelops/hsqldb/stargazers)
-[![Docker Stars](https://img.shields.io/docker/stars/blacklabelops/hsqldb.svg)](https://hub.docker.com/r/blacklabelops/hsqldb/) [![Docker Pulls](https://img.shields.io/docker/pulls/blacklabelops/hsqldb.svg)](https://hub.docker.com/r/blacklabelops/hsqldb/)
-
 ## Release: blacklabelops/hsqldb:latest
 
 Installed Software:
@@ -192,14 +188,6 @@ $ docker run -d --name hsqldb \
 ~~~~
 
 > You will have to use Java 8 parameters: [JRE 8 Linux](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html).
-
-# Support
-
-Leave a message and ask questions on Hipchat: [blacklabelops/hipchat](http://support.blacklabelops.com)
-
-Maybe no one has ever told you, but munich developers run on beer! If you like my work, share a beer!
-
-[![BeerMe](https://raw.githubusercontent.com/ikkez/Beer-Donation-Button/gh-pages/img/beer_donation_button_single.png)](https://www.paypal.me/donateblacklabelops)
 
 # References
 
